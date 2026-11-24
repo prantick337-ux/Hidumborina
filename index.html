@@ -103,7 +103,7 @@ p{font-size:clamp(17px,2.5vw,21px);line-height:1.8;margin:0;max-width:550px}
   <section class="page" data-page="3">
     <div class="kicker">page four · one more thing</div>
     <h2>By the way…</h2>
-    <p>uhm.</p>
+    <p>There's something I made that I want you to see.</p>
     <div class="image-slot" id="imageSlot">
       <span id="imageFallback">Your image will go here ♡<br>Upload <strong>by-the-way.png</strong> beside index.html in your GitHub repository.</span>
       <img id="byTheWayImage" src="by-the-way.png" alt="A little something, by the way" class="hidden">
@@ -195,6 +195,7 @@ function playSound(audio, volume=0.45) {
   try {
     audio.pause();
     audio.currentTime = 0;
+    audio.playbackRate = 2;
     audio.volume = volume;
     const playback = audio.play();
     if (playback && typeof playback.catch === 'function') playback.catch(()=>{});
@@ -202,6 +203,7 @@ function playSound(audio, volume=0.45) {
 }
 function startStarrySound() {
   if (!soundEnabled) return;
+  starryAudio.playbackRate = 2;
   starryAudio.volume = 0.16;
   const playback = starryAudio.play();
   if (playback && typeof playback.catch === 'function') playback.catch(()=>{});
